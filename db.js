@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb://localhost:27017/blog-base?directConnection=true&readPreference=primary'
+require('dotenv').config();
 
+const mongoURI = process.env.MONGO_URI;
 
 const connectToMongo = ()=>{
     mongoose.connect(mongoURI);
