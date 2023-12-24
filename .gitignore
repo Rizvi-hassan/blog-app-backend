@@ -1,3 +1,2 @@
 /node_modules
-.inv
-package-lock.json
+.env
