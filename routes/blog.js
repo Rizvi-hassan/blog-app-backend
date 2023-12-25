@@ -17,8 +17,8 @@ router.post('/addblog', Validate, async (req, res) => {
         if (user) {
             const data = req.body;
             const blog = new Blog({user: id, author: data.author, date: data.date, head: data.head, title: data.title, mainImg: data.mainImg, tag: data.tag, elements: data.elements});
-            const save = await blog.save();
-            res.send(save);
+            const out = await blog.save();
+            res.json({status: 'success', out});
         }
         else {
             res.status(401).json({ attenpt: 'fail', errors: { msg: 'Unauthorised user' } });
