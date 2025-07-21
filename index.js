@@ -10,8 +10,14 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+// Test route to check if the server is running
+app.get('/test', (req, res)=>{
+    res.status(200).json({message: "Test successful!"});
+})
+
 app.use('/auth', require('./routes/auth'));
 app.use('/blog', require('./routes/blog'));
+
 
 
 app.listen(port, ()=>{
