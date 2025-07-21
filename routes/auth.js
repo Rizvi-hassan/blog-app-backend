@@ -44,7 +44,7 @@ router.post('/adduser', [
 
     } catch (error) {
         console.error(error);
-        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong " } })
+        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong ", error } })
     }
 })
 
@@ -80,7 +80,7 @@ router.post('/login', [
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong " } })
+        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong ", error } })
     }
 })
 
@@ -96,7 +96,7 @@ router.post('/getuser', Validate, async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong " } })
+        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong ", error } })
 
     }
 })

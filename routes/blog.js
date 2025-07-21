@@ -27,7 +27,7 @@ router.post('/addblog', Validate, async (req, res) => {
 
     } catch (error) {
         console.error(error);
-        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong " } })
+        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong ", error } })
     }
 })
 
@@ -42,7 +42,7 @@ router.get('/fetchblogs', async (req, res) => {
         res.json(data);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong " } })
+        res.status(500).json({ attempt: 'fail', errors: { msg: "Something went wrong ", error } })
 
     }
 })
