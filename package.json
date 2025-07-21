@@ -4,7 +4,7 @@
   "description": "It is the backend part of the blogapp project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No tests yet\"",
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
