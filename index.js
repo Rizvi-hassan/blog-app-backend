@@ -15,6 +15,10 @@ app.get('/test', (req, res)=>{
     res.status(200).json({message: "Test successful!"});
 })
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 app.use('/auth', require('./routes/auth'));
 app.use('/blog', require('./routes/blog'));
 
