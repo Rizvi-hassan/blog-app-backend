@@ -61,7 +61,6 @@ router.post('/login', [
         //There is no wrong input 
         const { email, password } = req.body;
         const find = await User.findOne({ email })
-        console.log("find: ", find);
         if (!find) {
             return res.status(400).json({ attempt: "fail", errors: { msg: "User does not exist." } })
         }
