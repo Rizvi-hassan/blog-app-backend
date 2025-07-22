@@ -36,6 +36,7 @@ router.post('/addblog', Validate, async (req, res) => {
 router.get('/fetchblogs', async (req, res) => {
     try {
         let data = await Blog.find().sort([['date', -1]]);
+
         data = data.filter((value) => {
             return (value.tag !== 'PRIVATE')
         })

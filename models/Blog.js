@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const tempData = {"author":"Rizvi Hassan","date":"December 22, 2023","head":"This is the heading","title":"This is the title","mainImg":"https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg","tag":"public","elements":[["p","Enter the content of paragraph",0],["h2","Enter the subheading",1],["p","Enter the content of paragraph.\nEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraph.Enter the content of paragraph\nEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraphEnter the content of paragraph",2]]}
 
-const arr = new mongoose.Schema({any: Array});
-
 const BlogSchema = new mongoose.Schema({
     user:{
         type: mongoose.Schema.Types.ObjectId,

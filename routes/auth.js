@@ -22,6 +22,7 @@ router.post('/adduser', [
     try {
         //Checking if user already exists
         let user = await User.findOne({ email: req.body.email })
+        console.log("user: ", user);
         if (user) {
             return res.status(400).json({ attempt: "fail", errors: { msg: "A user with same email already exists" } });
         }
@@ -39,7 +40,7 @@ router.post('/adduser', [
                 id: user.id,
             }
         }
-        const token = await jwt.sign(data, JWT_SIGN);
+        const token =  jwt.sign(data, JWT_SIGN);
         res.json({ attempt: 'success', token });
 
     } catch (error) {
@@ -60,6 +61,7 @@ router.post('/login', [
         //There is no wrong input 
         const { email, password } = req.body;
         const find = await User.findOne({ email })
+        console.log("find: ", find);
         if (!find) {
             return res.status(400).json({ attempt: "fail", errors: { msg: "User does not exist." } })
         }
@@ -74,7 +76,7 @@ router.post('/login', [
                     id: find.id,
                 }
             }
-            const token = await jwt.sign(data, JWT_SIGN);
+            const token = jwt.sign(data, JWT_SIGN);
             res.json({ attempt: 'success', token });
         }
     }
